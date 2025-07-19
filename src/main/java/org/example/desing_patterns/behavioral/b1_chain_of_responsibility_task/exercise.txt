@@ -1,0 +1,72 @@
+Great! To solidify your understanding of the **Chain of Responsibility (CoR)** design pattern and make it feel natural
+in real-life scenarios, you need an exercise that mimics real-world processing where multiple handlers can deal with a
+request — or pass it along.
+
+---
+
+### 🔧 **Exercise: Customer Support Ticket Handling System**
+
+**Problem Statement:**
+
+You're building a **Customer Support Ticket System** for a company. When a customer raises a ticket, the issue is
+processed by the following hierarchy:
+
+1. **Level 1 Support**: Handles general inquiries and FAQs.
+2. **Level 2 Support**: Handles technical issues or problems requiring investigation.
+3. **Manager**: Handles complaints or escalations not resolved by lower levels.
+
+Each level should:
+
+* Check if it can handle the request based on the issue type.
+* If not, forward it to the next handler in the chain.
+
+---
+
+### ✅ **Requirements**
+
+* Define an interface or abstract class `SupportHandler` with a method like `handleRequest(SupportTicket ticket)`.
+* Implement three concrete handlers:
+
+  * `Level1SupportHandler`
+  * `Level2SupportHandler`
+  * `ManagerHandler`
+* Each handler should decide whether to handle the request or pass it forward.
+* A `SupportTicket` class with properties:
+
+  * `String issueType` (e.g., "general", "technical", "complaint")
+  * `String message`
+
+---
+
+### 📦 Example Inputs
+
+```java
+new SupportTicket("general", "How to reset my password?")
+new SupportTicket("technical", "App crashes when uploading file.")
+new SupportTicket("complaint", "I'm unhappy with the service.")
+```
+
+---
+
+### 🔁 Expected Chain Behavior
+
+| Ticket Type  | Handler         |
+| ------------ | --------------- |
+| general      | Level 1 Support |
+| technical    | Level 2 Support |
+| complaint    | Manager         |
+| unknown type | Not handled     |
+
+---
+
+### 🧠 Real-Life Thinking Prompt
+
+After this, **brainstorm real-world chains** like:
+
+* **Expense Approval:** Employee → Team Lead → Manager → Director
+* **Spam Filter System:** VirusScanner → PhishingDetector → ContentChecker
+* **Middleware in Web Frameworks:** Auth → Logger → Router
+
+---
+
+

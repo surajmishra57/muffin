@@ -8,7 +8,7 @@ public class LevelThreeSupportHandler implements SupportHandler {
         if (request.getPriority() == Priority.CRITICAL) {
             System.out.println("this request is handled by LevelThree Handler");
         } else {
-            supportHandler.handleRequest(request);
+            System.out.println("Sorry Request Can't be handled");
         }
     }
 
