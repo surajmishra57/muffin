@@ -10,7 +10,7 @@ public class Main {
         secondLevelSupportHandler.setNextHandler(managerHandler);
 
         SupportTicket supportTicket1 = new SupportTicket(IssueType.COMPLAINT, "My PC NOT WORKING");
-        SupportTicket supportTicket2 = new SupportTicket(IssueType.TECHNICAL, "SOME APPLICATIN IS CRASH");
+        SupportTicket supportTicket2 = new SupportTicket(IssueType.TECHNICAL, "SOME APPLICATION IS CRASH");
         SupportTicket supportTicket3 = new SupportTicket(IssueType.GENERAL, "How To login");
         SupportTicket supportTicket4 = new SupportTicket(IssueType.NONE, "hehehee..");
 
